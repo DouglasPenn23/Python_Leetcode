@@ -9,6 +9,18 @@ This is a little harder than it looks and can be done without any loops. See als
 def make_bricks(small, big, goal):
     return (goal%5)<=small and (goal-(big*5))<=small
 
+# Another alternative that works
+def make_bricks(small, big, goal):
+    return (goal%5)<=small and (goal-(big*5))<=small
+
+
+# Take goal and modulus it by big brick, also take the total inches of small and big
+# If the goal is larger than either it can not be completed and we will return false.
+def make_bricks(small, big, goal):
+    if (goal % 5) > small or (small+big*5) < goal:
+      return False;
+    else:
+      return True;
 
 # # First unsuccessful attempt at this problem
 # def make_bricks(small, big, goal):
